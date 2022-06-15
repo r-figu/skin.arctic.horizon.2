@@ -268,14 +268,14 @@
                         <font>font_infotitle_light</font>
                     </include>
                     <font>font_infotitle</font>
-                    <visible>String.IsEmpty(Window(Home).Property(TMDBHelper.Player.CropImage))</visible>
+                    <visible>String.IsEmpty(Window(Home).Property(TMDBHelper.Player.CropImage)) | [String.IsEmpty(Player.Art(clearlogo)) + String.IsEmpty(Player.Art(tvshow.clearlogo))]</visible>
                 </control>
                 <control type="image">
                     <height>80</height>
                     <aspectratio align="left">keep</aspectratio>
                     <fadetime>600</fadetime>
                     <texture background="true">$INFO[Window(Home).Property(TMDBHelper.Player.CropImage)]</texture>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDBHelper.Player.CropImage))</visible>
+                    <visible>![String.IsEmpty(Window(Home).Property(TMDBHelper.Player.CropImage)) | [String.IsEmpty(Player.Art(clearlogo)) + String.IsEmpty(Player.Art(tvshow.clearlogo))]]</visible>
                 </control>
             </control>
             <control type="group">
