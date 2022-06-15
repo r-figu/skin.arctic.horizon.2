@@ -1,3 +1,10 @@
+The skin has been (minimally) tweaked to cover my needs: Kodi Matrix running on a Nvidia Shield (2017) and using Emby Server as media server. I have zero expertise with kodi skinning and not much time to look into it, so there's probably a much better way to do all the tweaked stuff.
+
+Many thanks to jurialmunkey for his brilliant and awesome work! I've been running the Arctic skins for years.
+
+https://github.com/jurialmunkey/skin.arctic.horizon.2
+
+---
 
 # Arctic Horizon 2 [![License](https://img.shields.io/badge/License-GPLv3-blue)](https://github.com/jurialmunkey/skin.arctic.horizon.2/blob/master/LICENSE.txt) [![License](https://img.shields.io/badge/license-CC--NC--SA%204.0-green)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
