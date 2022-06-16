@@ -128,8 +128,8 @@
                 <onleft condition="!String.IsEmpty(Container(300).ListItemNoWrap(-1).Label)">SetProperty(AnimationDirection,Left)</onleft>
                 <onleft condition="!String.IsEmpty(Container(300).ListItemNoWrap(-1).Label)">Control.Move(300,-1)</onleft>
 
-                <!--<onright condition="String.IsEmpty(Container(300).ListItemNoWrap(1).Label)">SetProperty(OptionsMenuFocused,303,Home)</onright>
-                <onright condition="String.IsEmpty(Container(300).ListItemNoWrap(1).Label)">SetFocus(303)</onright>-->
+                <onright condition="String.IsEmpty(Container(300).ListItemNoWrap(1).Label)">SetProperty(OptionsMenuFocused,303,Home)</onright>
+                <onright condition="String.IsEmpty(Container(300).ListItemNoWrap(1).Label)">SetFocus(303)</onright>
                 <onright condition="!String.IsEmpty(Container(300).ListItemNoWrap(1).Label)">SetProperty(AnimationDirection,Right)</onright>
                 <onright condition="!String.IsEmpty(Container(300).ListItemNoWrap(1).Label)">Control.Move(300,1)</onright>
                 <onfocus>ClearProperty(OptionsMenuFocused,Home)</onfocus>
