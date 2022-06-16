@@ -123,13 +123,13 @@
             <include content="Object_Hidden_Button">
                 <param name="id" value="399" />
 
-                <onleft condition="String.IsEmpty(Container(300).ListItemNoWrap(-1).Label)">ClearProperty(AnimationDirection)</onleft>
-                <onleft condition="String.IsEmpty(Container(300).ListItemNoWrap(-1).Label)">ActivateWindow(1114)</onleft>
+                <!--<onleft condition="String.IsEmpty(Container(300).ListItemNoWrap(-1).Label)">ClearProperty(AnimationDirection)</onleft>
+                <onleft condition="String.IsEmpty(Container(300).ListItemNoWrap(-1).Label)">ActivateWindow(1114)</onleft>-->
                 <onleft condition="!String.IsEmpty(Container(300).ListItemNoWrap(-1).Label)">SetProperty(AnimationDirection,Left)</onleft>
                 <onleft condition="!String.IsEmpty(Container(300).ListItemNoWrap(-1).Label)">Control.Move(300,-1)</onleft>
 
-                <onright condition="String.IsEmpty(Container(300).ListItemNoWrap(1).Label)">SetProperty(OptionsMenuFocused,303,Home)</onright>
-                <onright condition="String.IsEmpty(Container(300).ListItemNoWrap(1).Label)">SetFocus(303)</onright>
+                <!--<onright condition="String.IsEmpty(Container(300).ListItemNoWrap(1).Label)">SetProperty(OptionsMenuFocused,303,Home)</onright>
+                <onright condition="String.IsEmpty(Container(300).ListItemNoWrap(1).Label)">SetFocus(303)</onright>-->
                 <onright condition="!String.IsEmpty(Container(300).ListItemNoWrap(1).Label)">SetProperty(AnimationDirection,Right)</onright>
                 <onright condition="!String.IsEmpty(Container(300).ListItemNoWrap(1).Label)">Control.Move(300,1)</onright>
                 <onfocus>ClearProperty(OptionsMenuFocused,Home)</onfocus>
@@ -141,21 +141,21 @@
                 <onclick>Action(Select)</onclick>
                 <include>skinshortcuts-template-menubar</include>
             </include>
-            <control type="image">
+            <!--<control type="image">
                 <left>20</left>
                 <width>80</width>
                 <height>60</height>
                 <centertop>50%</centertop>
                 <aspectratio>keep</aspectratio>
                 <texture colordiffuse="main_fg_70">special://skin/extras/icons/search.png</texture>
-            </control>
+            </control>-->
             <include content="Object_MenuBar_List">
                 <param name="id" value="300" />
                 <param name="color_nf" value="main_fg" />
                 <param name="altfocus" value="Control.HasFocus(399)" />
                 <onfocus condition="String.IsEmpty(Window.Property(MenuSelect))">SetFocus(399)</onfocus>
                 <onfocus condition="String.IsEmpty(Window.Property(MenuSelect))">SetProperty(TMDbHelper.WidgetContainer,301,Home)</onfocus>
-                <left>80</left>
+                <left>-20</left>
                 <include>skinshortcuts-template-menubar</include>
                 <onfocus>ClearProperty(OptionsMenuFocused,Home)</onfocus>
                 <onup condition="!Skin.HasSetting(DisableSubmenuOnUp)">SetFocus(302,0,absolute)</onup>

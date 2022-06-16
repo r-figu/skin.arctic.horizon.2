@@ -1208,7 +1208,7 @@
         <param name="id" default="300" />
         <param name="overlay" default="true" />
         <param name="backing" default="true" />
-        <param name="width" default="1180" />
+        <param name="width" default="1080" />
         <definition>
             <include content="Furniture_Topbar_Group">
                 <include content="Animation_SlideIn_Dialog">
