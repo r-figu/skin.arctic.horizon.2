@@ -717,6 +717,7 @@
             <label>$LOCALIZE[38018]</label>
             <label2>$INFO[ListItem.UserRating,,       ]</label2>
             <onclick>SendClick(7)</onclick>
+            <visible>false</visible>
         </include>
         <include content="Dialog_Menu_Button" description="Artwork">
             <param name="id" value="10" />
