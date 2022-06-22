@@ -1340,8 +1340,8 @@
                             <!--<visible>![$PARAM[ratings]]</visible>-->
                             <visible>$PARAM[details]</visible>
                             <visible>$PARAM[plotbox]</visible>
-                            <top>-60</top>
-                            <bottom>0</bottom>
+                            <top>-50</top>
+                            <bottom>10</bottom>
                         </include>
                     </control>
                 </include>
