@@ -7,7 +7,8 @@ Main differences:
 - Change fullscreen widget controls position 
 - Hide fullscreen/row plotbox
 - Hide ratings and aired info
-- Note: Do not combine Fullscreen widget with other widgets
+
+So for the Home screen basically I'm using the Fullscreen widget alone or combined widgets with no info whatsoever, and row + wall as inner views.
 
 Many thanks to jurialmunkey for his brilliant and awesome work! I've been running the Arctic skins for years.
 
