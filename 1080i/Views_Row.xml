@@ -6,8 +6,11 @@
             <include content="Info_Panel">
                 <param name="plotwidth" value="880" />
                 <param name="plotheight" value="80" />
-                <param name="details" value="!$EXP[Exp_ListViews] + !Control.IsVisible(540) + !Control.IsVisible(58)" />
-                <top>view_top</top>
+                <param name="plotbox" value="false" />
+                <param name="details" value="false" />
+                <!--<param name="details" value="!$EXP[Exp_ListViews] + !Control.IsVisible(540) + !Control.IsVisible(58)" />-->
+                <!--<top>view_top</top>-->
+                <top>380</top>
                 <width>1080</width>
                 <left>view_pad</left>
             </include>
