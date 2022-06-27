@@ -1,9 +1,13 @@
-The skin has been (minimally) tweaked to cover my needs: Kodi Matrix running on a Nvidia Shield (2017) and using Emby Server as media server. I have zero expertise with kodi skinning and not much time to look into it, so there's probably a much better way to do all the tweaked stuff.
+The skin has been (minimally) tweaked to cover my needs: Currently running Kodi Matrix on a Nvidia Shield (2017) and using Emby Server as media server. I have zero expertise with kodi skinning and not much time to look into it, so there's probably a much better way to do all the tweaked stuff.
 
 Main differences:
 
 - Hide top menu search icon/bar
 - Incorporate [languageflags](https://github.com/r-figu/skin.arctic.horizon.2/tree/main/media/languageflags) into the skin and clean/add missing flags (ISO 639-2/T 3 letter code)
+- Change fullscreen widget controls position 
+- Hide fullscreen/row plotbox
+- Hide ratings and aired info
+- Note: Do not combine Fullscreen widget with other widgets
 
 Many thanks to jurialmunkey for his brilliant and awesome work! I've been running the Arctic skins for years.
 
