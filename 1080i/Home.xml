@@ -26,7 +26,7 @@
             <include>Animation_Foreground_FadeInOut</include>
             <include>skinshortcuts-template-fullscreen-widget</include>
             <control type="image">
-                <texture>common/vignetted.png</texture>
+                <texture>common/vignetted_b.png</texture>
             </control>
         </control>
 
