@@ -27,8 +27,6 @@
     <shortcut label="RebootFromNand" type="571" grouping="commands" thumbnail="special://skin/extras/icons/power.png" icon="special://skin/extras/icons/power.png" condition="System.Platform.Linux">RebootToAndroid</shortcut>
 
     <!-- Default Fullscreen Widget Set -->
-    <propertydefault labelID="videos" property="widgetPath">plugin://plugin.video.themoviedb.helper/?info=random_trending&amp;tmdb_type=both</propertydefault>
-    <propertydefault labelID="videos" property="widgetTarget">videos</propertydefault>
     <propertydefault labelID="movies" property="widgetPath">special://skin/extras/playlists/RandomMovies.xsp</propertydefault>
     <propertydefault labelID="movies" property="widgetTarget">videos</propertydefault>
     <propertydefault labelID="tvshows" property="widgetPath">special://skin/extras/playlists/RandomTvShows.xsp</propertydefault>
@@ -43,6 +41,12 @@
     <propertydefault labelID="31089" group="music.1" property="widgetAspect">Square</propertydefault>
     <propertydefault labelID="31089" group="music.1" property="widgetTarget">music</propertydefault>
     <propertydefault labelID="568" group="31085.1" property="widgetAspect">Landscape</propertydefault>
+    <propertydefault labelID="19017" group="31085.1" property="widgetAspect">Landscape</propertydefault>
+    <propertydefault labelID="19173" group="31085.1" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="19173" group="31085.1" property="widgetTarget">tvguide</propertydefault>
+    <propertydefault labelID="31219" group="videos.1" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="39031" group="videos.1" property="widgetAspect">Square</propertydefault>
+    <propertydefault labelID="1037" group="videos.1" property="widgetAspect">Square</propertydefault>
 
     <!-- Default Widgets Set for Search -->
     <propertydefault labelID="20360" group="searchmenu" property="widgetAspect">Landscape</propertydefault>
@@ -56,6 +60,8 @@
     <property property="widgetAspect">Landscape</property>
     <property property="widgetAspect">Big Landscape</property>
     <property property="widgetAspect">Banner</property>
+    <property property="widgetAspect">Button</property>
+    <property property="widgetAspect">Apps</property>
     <propertySettings property="widgetAspect" buttonID="9901" title="[CAPITALIZE]$LOCALIZE[31173] $LOCALIZE[736][/CAPITALIZE]" />
 
     <!-- Widget Target -->
@@ -108,6 +114,14 @@
     <property property="widgetLimit" label="100 ">$NUMBER[100]</property>
     <property property="widgetLimit" label="$LOCALIZE[21428] ">$NUMBER[99999]</property>
     <propertySettings property="widgetLimit" buttonID="9907" title="[CAPITALIZE]$LOCALIZE[31173] $LOCALIZE[31188][/CAPITALIZE]" />
+
+
+    <!-- Onback Management -->
+    <onback to="9312">312</onback>
+    <onback to="9312">9912</onback>
+    <onback to="9312">9913</onback>
+    <onback to="9312">9914</onback>
+    <onback to="9312">9917</onback>
 
     <!-- Icon Overrides -->
     <icon image="DefaultShortcut.png">special://skin/extras/icons/shortcut.png</icon>
@@ -309,9 +323,13 @@
         <shortcut label="Spotify Albums" type="571" icon="special://skin/extras/icons/spotify.png">DefaultSearch-SpotifyAlbums</shortcut>
         <shortcut label="Spotify Songs" type="571" icon="special://skin/extras/icons/spotify.png">DefaultSearch-SpotifySongs</shortcut>
         <shortcut label="Spotify Playlists" type="571" icon="special://skin/extras/icons/spotify.png">DefaultSearch-SpotifyPlaylists</shortcut>
+        <shortcut label="Radio DE" type="571" icon="special://skin/extras/icons/radio.png">DefaultSearch-RadioDE</shortcut>
         <shortcut label="TMDb Movies" type="571" icon="special://skin/extras/icons/film.png">DefaultSearch-TMDBMovies</shortcut>
         <shortcut label="TMDb Shows" type="571" icon="special://skin/extras/icons/tv.png">DefaultSearch-TMDBShows</shortcut>
         <shortcut label="TMDb Sets" type="571" icon="special://skin/extras/icons/sets.png">DefaultSearch-TMDBSets</shortcut>
         <shortcut label="TMDb People" type="571" icon="special://skin/extras/icons/person3.png">DefaultSearch-TMDBPeople</shortcut>
+        <shortcut label="Trakt Lists" type="571" icon="special://skin/extras/icons/trakt.png">DefaultSearch-TMDBListsTrakt</shortcut>
+        <shortcut label="MDB Lists" type="571" icon="special://skin/extras/icons/list.png">DefaultSearch-TMDBListsMDBList</shortcut>
+
     </customsearchdefaultitems-groupings>
 </overrides>

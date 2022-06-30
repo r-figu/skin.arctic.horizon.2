@@ -133,7 +133,7 @@
                 <width>1140</width>
                 <include>Animation_Foreground_FadeInOut</include>
             </include>
-            <include content="Object_Control" condition="!$EXP[Exp_BackgroundVideo_Include]">
+            <include content="Object_Control" condition="!Skin.HasSetting(UseBackgroundVideo)">
                 <param name="control" value="image" />
                 <height>280</height>
                 <right>0</right>
@@ -500,6 +500,7 @@
             <control type="image">
                 <top>20</top>
                 <height>180</height>
+                <width>600</width>
                 <right>0</right>
                 <aspectratio align="right">keep</aspectratio>
                 <texture>$INFO[ListItem.Icon]</texture>
