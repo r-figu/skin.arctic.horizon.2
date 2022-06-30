@@ -4,6 +4,7 @@
     <include name="Info_Title">
         <param name="colordiffuse" default="main_fg" />
         <param name="container" default="" />
+        <param name="forcetext" default="false" />
         <definition>
             <control type="group">
                 <height>80</height>
@@ -16,10 +17,10 @@
                         <font>font_infotitle_light</font>
                     </include>
                     <font>font_infotitle</font>
-                    <visible>![Skin.HasSetting(TMDbHelper.EnableCrop) +
+                    <visible>[$PARAM[forcetext] | ![Skin.HasSetting(TMDbHelper.EnableCrop) +
                         [[!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.CropImage)) + !$EXP[Exp_RecommendationDialogs] + [String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,set) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)]] |
                         [$EXP[Exp_RecommendationDialogs] + !String.IsEmpty(Window.Property(CropLogo))] |
-                        [!String.IsEmpty($PARAM[container]ListItem.Art(artist.clearlogo)) | [String.IsEqual($PARAM[container]ListItem.DBType,artist) + !String.IsEmpty($PARAM[container]ListItem.Art(clearlogo))]]]]</visible>
+                        [!String.IsEmpty($PARAM[container]ListItem.Art(artist.clearlogo)) | [String.IsEqual($PARAM[container]ListItem.DBType,artist) + !String.IsEmpty($PARAM[container]ListItem.Art(clearlogo))]]]]]</visible>
                     <animation type="Hidden" reversible="false">
                         <effect type="fade" end="0" start="100" time="300" delay="700"/>
                     </animation>
@@ -32,10 +33,10 @@
                     <aspectratio align="left">keep</aspectratio>
                     <fadetime>600</fadetime>
                     <texture background="true">$VAR[Image_CropLogo_Main]</texture>
-                    <visible>[Skin.HasSetting(TMDbHelper.EnableCrop) +
+                    <visible>[[!$PARAM[forcetext] + Skin.HasSetting(TMDbHelper.EnableCrop) +
                         [[!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.CropImage)) + !$EXP[Exp_RecommendationDialogs] + [String.IsEqual($PARAM[container]ListItem.DBType,movie) | String.IsEqual($PARAM[container]ListItem.DBType,tvshow) | String.IsEqual($PARAM[container]ListItem.DBType,set) | String.IsEqual($PARAM[container]ListItem.DBType,season) | String.IsEqual($PARAM[container]ListItem.DBType,episode) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)]] |
                         [$EXP[Exp_RecommendationDialogs] + !String.IsEmpty(Window.Property(CropLogo))] |
-                        [!String.IsEmpty($PARAM[container]ListItem.Art(artist.clearlogo)) | [String.IsEqual($PARAM[container]ListItem.DBType,artist) + !String.IsEmpty($PARAM[container]ListItem.Art(clearlogo))]]]]</visible>
+                        [!String.IsEmpty($PARAM[container]ListItem.Art(artist.clearlogo)) | [String.IsEqual($PARAM[container]ListItem.DBType,artist) + !String.IsEmpty($PARAM[container]ListItem.Art(clearlogo))]]]]]</visible>
                     <animation type="Visible" reversible="false">
                         <effect type="fade" end="100" start="0" time="300" delay="1000"/>
                     </animation>
@@ -1212,6 +1213,7 @@
         <param name="title" default="true" />
         <param name="infoline" default="true" />
         <param name="plotlabel">$VAR[Label_Plot_Main]</param>
+        <param name="forcetext" default="false" />
         <definition>
             <control type="grouplist">
                 <orientation>vertical</orientation>
@@ -1220,6 +1222,7 @@
                 <include content="Info_Title" condition="$PARAM[title]">
                     <param name="colordiffuse" value="$PARAM[colordiffuse]" />
                     <param name="container" value="$PARAM[container]" />
+                    <param name="forcetext" value="$PARAM[forcetext]" />
                 </include>
                 <control type="group">
                     <height>50</height>
