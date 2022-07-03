@@ -123,7 +123,7 @@
             <param name="groupid" value="5103" />
             <param name="label" value="$LOCALIZE[137]" />
             <param name="icon" value="special://skin/extras/icons/search.png" />
-            <param name="visible" value="true" />
+            <param name="visible" value="false" />
             <onclick condition="!String.IsEmpty(ListItem.TvShowTitle)">SetProperty(CustomSearchTerm,$ESCINFO[ListItem.TvShowTitle],Home)</onclick>
             <onclick condition="String.IsEmpty(ListItem.TvShowTitle) + !String.IsEmpty(ListItem.Title)">SetProperty(CustomSearchTerm,$ESCINFO[ListItem.Title],Home)</onclick>
             <onclick condition="String.IsEmpty(ListItem.TvShowTitle) + String.IsEmpty(ListItem.Title)">SetProperty(CustomSearchTerm,$ESCINFO[ListItem.Label],Home)</onclick>
