@@ -2,7 +2,7 @@ The skin has been (minimally) tweaked to cover my needs: Currently running Kodi 
 
 Main differences:
 
-- Hide top menu search icon/bar
+- ~Hide top menu search icon/bar~ _Option available on upstream, yay!_
 - Incorporate [languageflags](https://github.com/r-figu/skin.arctic.horizon.2/tree/main/media/languageflags) into the skin and clean/add missing flags (ISO 639-2/T 3 letter code)
 - Change fullscreen widget controls position 
 - Hide fullscreen/row plotbox
