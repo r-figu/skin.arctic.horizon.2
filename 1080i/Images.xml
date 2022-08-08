@@ -99,10 +99,10 @@
     </variable>
 
     <variable name="Image_CombinedStudio">
-        <value condition="Container.Content(studios)">$INFO[ListItem.Label,resource://resource.images.studios.coloured/,.png]</value>
-        <value condition="!String.IsEmpty(ListItem.Property(Network.1.Name))">$INFO[ListItem.Property(Network.1.Name),resource://resource.images.studios.coloured/,.png]</value>
-        <value condition="!String.IsEmpty(ListItem.Property(Studio.1.Name))">$INFO[ListItem.Property(Studio.1.Name),resource://resource.images.studios.coloured/,.png]</value>
-        <value condition="!String.IsEmpty(ListItem.Studio)">$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</value>
+        <value condition="Container.Content(studios)">$INFO[ListItem.Label,studiowhite/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem.Property(Network.1.Name))">$INFO[ListItem.Property(Network.1.Name),studiowhite/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem.Property(Studio.1.Name))">$INFO[ListItem.Property(Studio.1.Name),studiowhite/,.png]</value>
+        <value condition="!String.IsEmpty(ListItem.Studio)">$INFO[ListItem.Studio,studiowhite/,.png]</value>
     </variable>
 
     <variable name="Image_DirectorIcon">
