@@ -44,7 +44,7 @@
                         <visible>!Control.HasFocus(7001) | !Player.HasVideo</visible>
                         <include content="Info_Panel">
                             <param name="ratings" value="!String.IsEmpty(Window(home).Property(TMDbHelper.ListItem.TMDb_Rating)) | !String.IsEmpty(Window(home).Property(TMDbHelper.ListItem.Trakt_Rating)) | !String.IsEmpty(Window(home).Property(TMDbHelper.ListItem.IMDb_Rating)) | !String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Status))" />
-                            <param name="plotheight" value="120" />
+                            <param name="plotheight" value="info_plot_large_h" />
                         </include>
                         <control type="group">
                             <top>360</top>
@@ -101,9 +101,10 @@
             <param name="grouplist_items" value="Items_DialogPVRInfo_Options" />
             <param name="visible" value="!$EXP[Exp_OverlayDialogs]" />
             <param name="onback" value="5000" />
+            <param name="usemousefocus">true</param>
         </include>
 
-        <include>Dialog_VideoInfoTrailerButton</include>
+        <include>Dialog_VideoInfoTrailerFullscreen</include>
         <include>Dialog_VideoInfoRecommendationsButton</include>
     </controls>
 </window>

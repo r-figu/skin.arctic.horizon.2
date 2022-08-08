@@ -140,7 +140,9 @@
                     <include>Animation_Foreground_FadeInOut</include>
                     <orientation>vertical</orientation>
                     <onup>SetFocus(300)</onup>
-                    <ondown>SetFocus(330)</ondown>
+                    <ondown>ClearProperty(330_FocusBounce,Home)</ondown>
+                    <ondown condition="!String.IsEqual(Window(Home).Property(Slide.WidgetInfoStyle),Full)">SetFocus(330)</ondown>
+                    <ondown condition="String.IsEqual(Window(Home).Property(Slide.WidgetInfoStyle),Full)">AlarmClock(330_FocusBounce_Reset,SetProperty(330_FocusBounce,1,Home),00:00,silent)</ondown>
 
                     <control type="group" id="$PYTHON[int(mainmenuid) * 1000 + 500]">
                         <top>widget_fs_button_top</top>
@@ -155,6 +157,7 @@
                             <param name="plotheight" value="80" />
                             <param name="plotbox" value="false" />
                             <param name="details" value="false" />
+                            <!--<param name="plotheight" value="info_plot_h" />-->
                             <param name="controltype">label</param>
                             <param name="line_id" value="$PYTHON[int(mainmenuid) * 1000 + 598]" />
                             <param name="container" value="Container(301)." />
@@ -247,10 +250,13 @@
             </include>
             <include content="Object_WallFade" condition="$SKINSHORTCUTS[includeCondition]">
                 <param name="id">$PYTHON[int(mainmenuid) * 1000 + 400]</param>
-                <param name="altvisible_bottom">!String.IsEmpty(Window(Home).Property(Slide.WidgetInfoStyle))</param>
-                <visible>!Integer.IsEqual(Window(Home).Property(TMDBHelper.WidgetContainer),301) | !$SKINSHORTCUTS[isFullscreenWidget]</visible>
+                <param name="altvisible_top">Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),$PYTHON[int(mainmenuid) * 1000 + 601])</param>
+                <param name="altvisible_bottom">[!String.IsEmpty(Window(Home).Property(Slide.WidgetInfoStyle)) + $SKINSHORTCUTS[isSubmenuBumper]]</param>
+                <param name="direction_buttons">true</param>
+                <param name="visible_top">![Control.HasFocus($PYTHON[int(mainmenuid) * 1000 + 601]) | Control.HasFocus($PYTHON[int(mainmenuid) * 1000 + 501]) | Control.HasFocus($PYTHON[int(mainmenuid) * 1000 + 503]) | Integer.IsEqual(Window(Home).Property(TMDbHelper.WidgetContainer),$PYTHON[int(mainmenuid) * 1000 + 601])]</param>
                 <visible>!$EXP[Exp_InfoDialogs]</visible>
                 <visible>String.IsEqual(Container(300).ListItem.Property(submenuVisibility),$SKINSHORTCUTS[submenuVisibility])</visible>
+                <visible>!Integer.IsEqual(Container($PYTHON[int(mainmenuid) * 1000 + 400]).NumItems,1)</visible>
                 <visible>Window.IsActive(Home)</visible>
             </include>
         </controls>
@@ -497,9 +503,15 @@
                         <content><include>skinshortcuts-group-$SKINSHORTCUTS[submenuVisibility]</include></content>
                     </include>
                     <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PYTHON[int(mainmenuid) * 1000 + 600 + int(id)],Home)</onfocus>
+                    <onfocus condition="$SKINSHORTCUTS[isInfoFull] + ![$SKINSHORTCUTS[widgetLabelName]] + Skin.HasSetting(Widgets.CodecInfo)">SetProperty(Slide.WidgetTitle,$SKINSHORTCUTS[widgetName],Home)</onfocus>
+                    <onfocus condition="$SKINSHORTCUTS[isInfoFull] + [$SKINSHORTCUTS[widgetLabelName]] + Skin.HasSetting(Widgets.CodecInfo)">SetProperty(Slide.WidgetTitle,[CAPITALIZE]$INFO[Container($PYTHON[int(mainmenuid) * 1000 + 600 + int(id)]).ListItem.Property(widget)][/CAPITALIZE],Home)</onfocus>
+
                     <onfocus condition="$SKINSHORTCUTS[isInfo]">SetProperty(Slide.WidgetContainer,$PYTHON[int(mainmenuid) * 1000 + 600 + int(id)],Home)</onfocus>
                     <onfocus>SetProperty(Slide.WidgetInfoStyle,$SKINSHORTCUTS[widgetInfo],Home)</onfocus>
+
+
                     <onunfocus>ClearProperty(Slide.WidgetContainer,Home)</onunfocus>
+                    <onunfocus>ClearProperty(Slide.WidgetTitle,Home)</onunfocus>
                     <onback>SetFocus($PYTHON[int(mainmenuid) * 1000 + 601])</onback>
                     <onback>SetFocus($PYTHON[int(mainmenuid) * 1000 + 599])</onback>
                     <onback>SetFocus(300)</onback>
@@ -811,6 +823,9 @@
             <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Episodes">videodb://tvshows/titles/-1/-1/-1/-1/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22title%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
             <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Episodes">%22%5D%7D%5D%7D%2C%22type%22%3A%22episodes%22%7D</property>
 
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Tags">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Tags">%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</property>
+
             <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-Genres">videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22genre%22%2C%22operator%22%3A%22contains%22%2C%22value%22%3A%5B%22</property>
             <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-Genres">%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D</property>
 
@@ -861,8 +876,8 @@
             <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-TMDBShows">plugin://plugin.video.themoviedb.helper?info=search&amp;type=tv&amp;query=</property>
             <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-TMDBShows">&amp;nextpage=false&amp;fanarttv=false&amp;cacheonly=true</property>
 
-            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-TMDbSets">plugin://plugin.video.themoviedb.helper?info=search&amp;type=collection&amp;query=</property>
-            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-TMDbSets">&amp;nextpage=false&amp;fanarttv=false&amp;cacheonly=true</property>
+            <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-TMDBSets">plugin://plugin.video.themoviedb.helper?info=search&amp;type=collection&amp;query=</property>
+            <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-TMDBSets">&amp;nextpage=false&amp;fanarttv=false&amp;cacheonly=true</property>
 
             <property name="widgetPath" tag="property" attribute="name|list" value="DefaultSearch-TMDBPeople">plugin://plugin.video.themoviedb.helper?info=search&amp;type=person&amp;query=</property>
             <property name="widgetPath2" tag="property" attribute="name|list" value="DefaultSearch-TMDBPeople">&amp;nextpage=false&amp;fanarttv=false&amp;cacheonly=true</property>

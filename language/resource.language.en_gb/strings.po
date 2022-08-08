@@ -987,7 +987,7 @@ msgstr ""
 
 #: /1080i/SkinSettings.xml
 msgctxt "#31195"
-msgid "Profile image with clock"
+msgid "Profile image"
 msgstr ""
 
 #: /1080i/Custom_1120_Recommend.xml
@@ -1232,7 +1232,7 @@ msgstr ""
 
 #: /1080i/DialogSeekBar.xml
 msgctxt "#31244"
-msgid "Now Playing"
+msgid "Now playing"
 msgstr ""
 
 #: /1080i/SkinSettings.xml
@@ -1338,4 +1338,79 @@ msgstr ""
 #: /1080i/Dialogs.xml
 msgctxt "#31265"
 msgid "Budget"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31266"
+msgid "Pause video when opening info"
+msgstr ""
+
+#: /1080i/Info.xml
+msgctxt "#31267"
+msgid "Ends"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31268"
+msgid "Customise infoline"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31269"
+msgid "Infoline"
+msgstr ""
+
+#: /1080i/Items.xml
+msgctxt "#31270"
+msgid "Single image"
+msgstr ""
+
+#: /1080i/Items.xml
+msgctxt "#31271"
+msgid "Image folder"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31272"
+msgid "Automatically display info on big poster row after delay"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31273"
+msgid "Text labels on big landscape viewtypes"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31274"
+msgid "Expand full info widgets to include header and footer"
+msgstr ""
+
+#: /1080i/Views_Wall.xml
+msgctxt "#31275"
+msgid "Media Info Wall"
+msgstr ""
+
+#: /1080i/Views_List.xml
+msgctxt "#31276"
+msgid "Media Info List"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31277"
+msgid "Section label"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31278"
+msgid "Clock"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31279"
+msgid "Studio icons"
+msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31280"
+msgid "Media information"
 msgstr ""

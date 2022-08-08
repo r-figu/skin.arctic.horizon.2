@@ -54,6 +54,15 @@
     <constant name="info_plot_w">1140</constant>
     <constant name="info_panel_w">1140</constant>
 
+    <constant name="-info_plot_small_h">-41</constant>
+    <constant name="info_plot_small_h">41</constant>
+    <constant name="-info_plot_h">-81</constant>
+    <constant name="info_plot_h">81</constant>
+    <constant name="-info_plot_large_h">-121</constant>
+    <constant name="info_plot_large_h">121</constant>
+    <constant name="-info_plot_person_h">-521</constant>
+    <constant name="info_plot_person_h">521</constant>
+
     <constant name="context_icon_w">515.2</constant>
     <constant name="context_slide_no">-257.6</constant>
     <constant name="context_slide_arrow_no">257.6</constant>
@@ -65,12 +74,14 @@
     <constant name="-view_poster_itemlayout_w">-257.14</constant>
     <constant name="view_poster_item_h">320</constant>
     <constant name="view_poster_itemlayout_h">360</constant>
+    <constant name="view_mediainfo_landscape_w">731.42</constant>
+    <constant name="view_mediainfo_landscape_h">411.42375</constant>
+    <constant name="view_mediainfo_landscape_info_top">440</constant>
 
     <constant name="infowidget_slide_top">-90</constant>
-    <constant name="infowidget_slide_bottom_plot">120</constant>
-    <constant name="infowidget_slide_bottom_full">40</constant>
-    <constant name="infowidget_slide_pos">50</constant>  <!-- 50 / 180 -->
-    <constant name="infowidget_slide_infotop">-60</constant> <!-- -60 / -260 -->
+    <constant name="infowidget_slide_bottom">160</constant>
+    <constant name="infowidget_slide_pos">180</constant>  <!-- 50 / 180 -->
+    <constant name="infowidget_slide_infotop">-260</constant> <!-- -60 / -260 -->
     <constant name="infowidget_slide_infobottom">440</constant>
 
     <constant name="upnext_image_w">284</constant>
@@ -96,6 +107,6 @@
     <constant name="keyboard_space">680</constant>    <!-- 7 keys (height*7 + buttonpad*6) -->
 
     <constant name="widget_fs_button_top">720</constant>
-    <constant name="widget_fs_button_height">-60</constant>
+    <constant name="widget_fs_button_height">-80</constant>
     <constant name="widget_fs_info_top">-220</constant>
 </includes>

@@ -924,18 +924,32 @@
 
     <include name="Items_Settings_Recommendations">
         <include content="Dialog_Settings_Label">
-            <param name="id" value="8098" />
+            <param name="id" value="8090" />
             <label>$LOCALIZE[5]</label>
         </include>
         <include content="Dialog_Settings_Button">
-            <param name="id" value="8099" />
+            <param name="id" value="8091" />
             <param name="control" value="radiobutton" />
             <onclick>Skin.ToggleSetting(Recommendations.ExpandPlot)</onclick>
             <selected>Skin.HasSetting(Recommendations.ExpandPlot)</selected>
             <label>$LOCALIZE[31208]</label>
         </include>
+        <include content="Dialog_Settings_Button" description="Aggregate full tv cast list">
+            <param name="id" value="8092" />
+            <param name="control" value="radiobutton" />
+            <onclick>Skin.ToggleSetting(Recommendations.AggregateTvCast)</onclick>
+            <selected>Skin.HasSetting(Recommendations.AggregateTvCast)</selected>
+            <label>$LOCALIZE[31191]</label>
+        </include>
+        <include content="Dialog_Settings_Button" description="Aggregate full tv crew list">
+            <param name="id" value="8093" />
+            <param name="control" value="radiobutton" />
+            <onclick>Skin.ToggleSetting(Recommendations.AggregateTvCrew)</onclick>
+            <selected>Skin.HasSetting(Recommendations.AggregateTvCrew)</selected>
+            <label>$LOCALIZE[31192]</label>
+        </include>
         <include content="Dialog_Settings_Label">
-            <param name="id" value="8097" />
+            <param name="id" value="8099" />
             <label>$LOCALIZE[31020]</label>
         </include>
         <include content="Dialog_Settings_Button">
@@ -1057,6 +1071,7 @@
             <selected>!Skin.HasSetting(Info.DisableKeywords)</selected>
             <label>$LOCALIZE[21861]</label>
         </include>
+
     </include>
 
     <include name="Items_Settings_Indicators">
@@ -1211,6 +1226,24 @@
     </include>
 
 
+    <include name="Items_Settings_Infoline">
+        <include content="Dialog_Settings_Button">
+            <param name="id" value="8001" />
+            <param name="control" value="radiobutton" />
+            <onclick>Skin.ToggleSetting(Infoline.EnableEndTime)</onclick>
+            <selected>Skin.HasSetting(Infoline.EnableEndTime)</selected>
+            <label>$LOCALIZE[19127]</label>
+        </include>
+        <include content="Dialog_Settings_Button">
+            <param name="id" value="8002" />
+            <param name="control" value="radiobutton" />
+            <onclick>Skin.ToggleSetting(Infoline.EnableGenre)</onclick>
+            <selected>Skin.HasSetting(Infoline.EnableGenre)</selected>
+            <label>$LOCALIZE[515]</label>
+        </include>
+    </include>
+
+
     <include name="Items_MusicOSD_Settings">
         <include content="Dialog_Settings_Button">
             <param name="id" value="8001" />
@@ -1309,6 +1342,82 @@
             <label>$LOCALIZE[31204]</label>
             <onclick>Skin.ToggleSetting(UseBackgroundVideo)</onclick>
             <selected>Skin.HasSetting(UseBackgroundVideo)</selected>
+        </include>
+    </include>
+
+    <include name="Items_Settings_CustomStartup">
+        <include content="Dialog_Settings_Button">
+            <param name="id" value="8001" />
+            <param name="control" value="button" />
+            <label>$LOCALIZE[31270]</label>
+            <onclick>Close</onclick>
+            <onclick>Skin.SetImage(Startup.ImageFolder)</onclick>
+        </include>
+        <include content="Dialog_Settings_Button">
+            <param name="id" value="8002" />
+            <param name="control" value="button" />
+            <label>$LOCALIZE[31271]</label>
+            <onclick>Close</onclick>
+            <onclick>Skin.SetPath(Startup.ImageFolder)</onclick>
+        </include>
+        <include content="Dialog_Settings_Button">
+            <param name="id" value="8003" />
+            <param name="control" value="button" />
+            <label>$LOCALIZE[571]</label>
+            <onclick>Close</onclick>
+            <onclick>Skin.SetString(Startup.ImageFolder,special://skin/extras/backgrounds/launch/)</onclick>
+        </include>
+    </include>
+
+    <include name="Items_Settings_Autoscroll">
+        <include content="Dialog_Settings_Button">
+            <param name="id">8001</param>
+            <param name="control">button</param>
+            <label>$NUMBER[10] $LOCALIZE[31130]</label>
+            <onclick>Close</onclick>
+            <onclick>Skin.SetString(AutoScrollTime,10s)</onclick>
+        </include>
+        <include content="Dialog_Settings_Button">
+            <param name="id">8002</param>
+            <param name="control">button</param>
+            <label>$NUMBER[12] $LOCALIZE[31130]</label>
+            <onclick>Close</onclick>
+            <onclick>Skin.SetString(AutoScrollTime,12s)</onclick>
+        </include>
+        <include content="Dialog_Settings_Button">
+            <param name="id">8003</param>
+            <param name="control">button</param>
+            <label>$NUMBER[15] $LOCALIZE[31130]</label>
+            <onclick>Close</onclick>
+            <onclick>Skin.SetString(AutoScrollTime,15s)</onclick>
+        </include>
+        <include content="Dialog_Settings_Button">
+            <param name="id">8004</param>
+            <param name="control">button</param>
+            <label>$NUMBER[20] $LOCALIZE[31130]</label>
+            <onclick>Close</onclick>
+            <onclick>Skin.SetString(AutoScrollTime,20s)</onclick>
+        </include>
+        <include content="Dialog_Settings_Button">
+            <param name="id">8005</param>
+            <param name="control">button</param>
+            <label>$NUMBER[30] $LOCALIZE[31130]</label>
+            <onclick>Close</onclick>
+            <onclick>Skin.SetString(AutoScrollTime,30s)</onclick>
+        </include>
+        <include content="Dialog_Settings_Button">
+            <param name="id">8006</param>
+            <param name="control">button</param>
+            <label>$NUMBER[60] $LOCALIZE[31130]</label>
+            <onclick>Close</onclick>
+            <onclick>Skin.SetString(AutoScrollTime,60s)</onclick>
+        </include>
+        <include content="Dialog_Settings_Button">
+            <param name="id">8007</param>
+            <param name="control">button</param>
+            <label>$NUMBER[10] [LOWERCASE]$LOCALIZE[12391][/LOWERCASE]</label>
+            <onclick>Close</onclick>
+            <onclick>Skin.SetString(AutoScrollTime,10m)</onclick>
         </include>
     </include>
 
