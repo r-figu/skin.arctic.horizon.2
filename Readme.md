@@ -1,6 +1,4 @@
-The skin has been (minimally) tweaked to cover my needs: Currently running Kodi Matrix on a Nvidia Shield (2017) and using Emby Server as media server. I have zero expertise with kodi skinning and not much time to look into it, so there's probably a much better way to do all the tweaked stuff.
-
-Main differences:
+The skin has been (minimally) tweaked to cover my needs. Main differences:
 
 - ~Hide top menu search icon/bar~ _Option available on upstream, yay!_
 - Incorporate [languageflags](https://github.com/r-figu/skin.arctic.horizon.2/tree/main/media/languageflags) into the skin and clean/add missing flags (ISO 639-2/T 3 letter code)
