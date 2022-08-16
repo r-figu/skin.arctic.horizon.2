@@ -6,6 +6,7 @@ The skin has been (minimally) tweaked to cover my needs. Main differences:
 - Change fullscreen widget controls position 
 - Hide fullscreen/row plotbox
 - Hide ratings and aired info
+- Hide studio logo on no-tvshow content
 
 So for the Home screen basically I'm using the Fullscreen widget alone or combined widgets with no info whatsoever, and row + wall as inner views.
 
