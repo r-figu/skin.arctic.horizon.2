@@ -91,6 +91,7 @@
             <onfocus>SetProperty(ContextMenu.Fanart,$VAR[ContextMenu_Container_Fanart],Home)</onfocus>
             <onfocus>SetProperty(ContextMenu.Poster,$VAR[ContextMenu_Container_Poster],Home)</onfocus>
             <onfocus>SetProperty(ContextMenu.Icon,$VAR[ContextMenu_Container_Icon],Home)</onfocus>
+            <onfocus>SetProperty(ContextMenu.OriginalTitle,$VAR[ContextMenu_Container_OriginalTitle],Home)</onfocus>
             <onfocus>SetProperty(ContextMenu.Title,$VAR[ContextMenu_Container_Title],Home)</onfocus>
             <onfocus>SetProperty(ContextMenu.Year,$VAR[ContextMenu_Container_Year],Home)</onfocus>
             <onfocus>SetProperty(ContextMenu.Tagline,$VAR[ContextMenu_Container_Tagline],Home)</onfocus>

@@ -36,6 +36,11 @@
         <value condition="!String.IsEmpty(ListItem.Tagline)">$ESCINFO[ListItem.Tagline]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Tagline))">$ESCINFO[Window(Home).Property(TMDBHelper.ListItem.Tagline)]</value>
     </variable>
+    
+    <variable name="ContextMenu_OriginalTitle">
+        <value condition="!String.IsEmpty(ListItem.OriginalTitle)">$ESCINFO[ListItem.OriginalTitle]</value>
+        <!--<value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.OriginalTitle))">$ESCINFO[Window(Home).Property(TMDBHelper.ListItem.OriginalTitle)]</value>-->
+    </variable>
 
     <variable name="ContextMenu_Title">
         <value condition="!String.IsEmpty(ListItem.TvShowTitle)">$ESCINFO[ListItem.TvShowTitle]</value>
@@ -124,6 +129,11 @@
         <value condition="!String.IsEmpty(Container.ListItem.Tagline)">$ESCINFO[Container.ListItem.Tagline]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Tagline))">$ESCINFO[Window(Home).Property(TMDBHelper.ListItem.Tagline)]</value>
     </variable>
+    
+    <variable name="ContextMenu_Container_OriginalTitle">
+        <value condition="!String.IsEmpty(Container.ListItem.OriginalTitle)">$ESCINFO[Container.ListItem.OriginalTitle]</value>
+        <!--<value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.OriginalTitle))">$ESCINFO[Window(Home).Property(TMDBHelper.ListItem.OriginalTitle)]</value>-->
+    </variable>
 
     <variable name="ContextMenu_Container_Title">
         <value condition="!String.IsEmpty(Container.ListItem.TvShowTitle)">$ESCINFO[Container.ListItem.TvShowTitle]</value>
@@ -183,6 +193,7 @@
             <onfocus>SetProperty(ContextMenu.Fanart,$VAR[ContextMenu_Container_Fanart],Home)</onfocus>
             <onfocus>SetProperty(ContextMenu.Poster,$VAR[ContextMenu_Container_Poster],Home)</onfocus>
             <onfocus>SetProperty(ContextMenu.Icon,$VAR[ContextMenu_Container_Icon],Home)</onfocus>
+            <onfocus>SetProperty(ContextMenu.OriginalTitle,$VAR[ContextMenu_Container_OriginalTitle],Home)</onfocus>
             <onfocus>SetProperty(ContextMenu.Title,$VAR[ContextMenu_Container_Title],Home)</onfocus>
             <onfocus>SetProperty(ContextMenu.Year,$VAR[ContextMenu_Container_Year],Home)</onfocus>
             <onfocus>SetProperty(ContextMenu.Tagline,$VAR[ContextMenu_Container_Tagline],Home)</onfocus>
@@ -197,6 +208,7 @@
         <onload condition="!Window.IsVisible(1120) + !String.IsEmpty(ListItem.Label)">SetProperty(ContextMenu.Fanart,$VAR[ContextMenu_Fanart],Home)</onload>
         <onload condition="!Window.IsVisible(1120) + !String.IsEmpty(ListItem.Label)">SetProperty(ContextMenu.Poster,$VAR[ContextMenu_Poster],Home)</onload>
         <onload condition="!Window.IsVisible(1120) + !String.IsEmpty(ListItem.Label)">SetProperty(ContextMenu.Icon,$VAR[ContextMenu_Icon],Home)</onload>
+        <onload condition="!Window.IsVisible(1120) + !String.IsEmpty(ListItem.Label)">SetProperty(ContextMenu.OriginalTitle,$VAR[ContextMenu_OriginalTitle],Home)</onload>
         <onload condition="!Window.IsVisible(1120) + !String.IsEmpty(ListItem.Label)">SetProperty(ContextMenu.Title,$VAR[ContextMenu_Title],Home)</onload>
         <onload condition="!Window.IsVisible(1120) + !String.IsEmpty(ListItem.Label)">SetProperty(ContextMenu.Year,$VAR[ContextMenu_Year],Home)</onload>
         <onload condition="!Window.IsVisible(1120) + !String.IsEmpty(ListItem.Label)">SetProperty(ContextMenu.Tagline,$VAR[ContextMenu_Tagline],Home)</onload>

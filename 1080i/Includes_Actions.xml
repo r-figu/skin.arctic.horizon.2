@@ -141,6 +141,7 @@
         <onunload>ClearProperty(ContextMenu.Fanart,Home)</onunload>
         <onunload>ClearProperty(ContextMenu.Poster,Home)</onunload>
         <onunload>ClearProperty(ContextMenu.Icon,Home)</onunload>
+        <onunload>ClearProperty(ContextMenu.OriginalTitle,Home)</onunload>
         <onunload>ClearProperty(ContextMenu.Title,Home)</onunload>
         <onunload>ClearProperty(ContextMenu.Year,Home)</onunload>
         <onunload>ClearProperty(ContextMenu.Tagline,Home)</onunload>
