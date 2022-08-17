@@ -7,6 +7,7 @@ The skin has been (minimally) tweaked to cover my needs. Main differences:
 - Hide ratings and aired info
 - Hide studio logo on no-tvshow content
 - Studio logos are now locally stored
+- Show original title 
 
 Config:
 
