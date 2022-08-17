@@ -2,13 +2,16 @@ The skin has been (minimally) tweaked to cover my needs. Main differences:
 
 - ~Hide top menu search icon/bar~ _Option available on upstream, yay!_
 - Incorporate [languageflags](https://github.com/r-figu/skin.arctic.horizon.2/tree/main/media/languageflags) into the skin and clean/add missing flags (ISO 639-2/T 3 letter code)
-- Incorporate [studios.white](https://github.com/XBMC-Addons/resource.images.studios.white) into the skin and change/add some logos
 - Change fullscreen widget controls position 
 - Hide fullscreen/row plotbox
 - Hide ratings and aired info
 - Hide studio logo on no-tvshow content
+- Studio logos are now locally stored
 
-So for the Home screen basically I'm using the Fullscreen widget alone or combined widgets with no info whatsoever, and row + wall as inner views.
+Config:
+
+- Home elements: Fullscreen widget or multi-widgets with no info whatsoever
+- Views: Row + vertical wall mode
 
 Many thanks to jurialmunkey for his brilliant and awesome work! I've been running the Arctic skins for years.
 
