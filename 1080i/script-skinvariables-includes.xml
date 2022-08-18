@@ -580,8 +580,8 @@
     <variable name="Image_Landscape_C50">
         <value condition="Container.Content(images)">$INFO[Container(50).ListItem.Icon]</value>
         <value condition="[String.IsEqual(Container(50).ListItem.DBType,episode) | String.IsEqual(Container(50).ListItem.DBType,video)] + !String.IsEmpty(Container(50).ListItem.Art(thumb)) + !String.IsEqual(Container(50).ListItem.Icon,Container(50).ListItem.Art(fanart)) + !String.IsEqual(Container(50).ListItem.Icon,OverlaySpoiler.png) + !String.IsEqual(Container(50).ListItem.Art(thumb),Container(50).ListItem.Art(poster)) + !String.IsEqual(Container(50).ListItem.Art(thumb),Container(50).ListItem.Art(tvshow.poster))">$INFO[Container(50).ListItem.Art(thumb)]</value>
-        <value condition="!String.IsEmpty(Container(50).ListItem.Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(50).ListItem.Art(landscape)]</value>
-        <value condition="!String.IsEmpty(Container(50).ListItem.Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(50).ListItem.Art(tvshow.landscape)]</value>
+        <!--<value condition="!String.IsEmpty(Container(50).ListItem.Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(50).ListItem.Art(landscape)]</value>
+        <value condition="!String.IsEmpty(Container(50).ListItem.Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[Container(50).ListItem.Art(tvshow.landscape)]</value>-->
         <value condition="!String.IsEmpty(Container(50).ListItem.Art(fanart))">$INFO[Container(50).ListItem.Art(fanart)]</value>
         <value condition="!String.IsEmpty(Container(50).ListItem.Art(tvshow.fanart))">$INFO[Container(50).ListItem.Art(tvshow.fanart)]</value>
         <value condition="!String.IsEmpty(Container(50).ListItem.Property(fanart))">$INFO[Container(50).ListItem.Property(fanart)]</value>
@@ -592,8 +592,8 @@
     <variable name="Image_Landscape">
         <value condition="Container.Content(images)">$INFO[ListItem.Icon]</value>
         <value condition="[String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,video)] + !String.IsEmpty(ListItem.Art(thumb)) + !String.IsEqual(ListItem.Icon,ListItem.Art(fanart)) + !String.IsEqual(ListItem.Icon,OverlaySpoiler.png) + !String.IsEqual(ListItem.Art(thumb),ListItem.Art(poster)) + !String.IsEqual(ListItem.Art(thumb),ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(thumb)]</value>
-        <value condition="!String.IsEmpty(ListItem.Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[ListItem.Art(landscape)]</value>
-        <value condition="!String.IsEmpty(ListItem.Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[ListItem.Art(tvshow.landscape)]</value>
+        <!--<value condition="!String.IsEmpty(ListItem.Art(landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[ListItem.Art(landscape)]</value>
+        <value condition="!String.IsEmpty(ListItem.Art(tvshow.landscape)) + !Skin.HasSetting(DisableLandscapeArt)">$INFO[ListItem.Art(tvshow.landscape)]</value>-->
         <value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(tvshow.fanart))">$INFO[ListItem.Art(tvshow.fanart)]</value>
         <value condition="!String.IsEmpty(ListItem.Property(fanart))">$INFO[ListItem.Property(fanart)]</value>
