@@ -153,7 +153,8 @@
     </variable>
 
     <variable name="Image_CropLogo_Main">
-        <value condition="$EXP[Exp_RecommendationDialogs] + !String.IsEmpty(Window.Property(CropLogo))">$INFO[Window.Property(CropLogo)]</value>
+        <value condition="Window.IsVisible(1120)">$INFO[Window.Property(CropLogo)]</value>
+        <value condition="$EXP[Exp_InfoDialogs]">$VAR[Image_CropLogo]</value>
         <value condition="!$EXP[Exp_InfoDialogs] + Window.IsVisible(Home) + Integer.IsEqual(Window(Home).Property(TMDBHelper.WidgetContainer),301)">$VAR[Image_CropLogo_C301]</value>
         <value>$VAR[Image_CropLogo_Parent]</value>
     </variable>
@@ -284,9 +285,5 @@
         <value condition="ListItem.IsRecording">indicator/record.png</value>
         <value condition="ListItem.HasTimer">indicator/timer.png</value>
         <value condition="ListItem.IsPlayable + !Skin.HasSetting(Indicator.DisablePVRGuideCatchUp)">indicator/library.png</value>
-    </variable>
-
-    <variable name="Image_MPAAConvert_Rated">
-        <value>resource://resource.images.classificationicons.colour/Australia $VAR[Label_MPAAConvert_Rated].png</value>
     </variable>
 </includes>

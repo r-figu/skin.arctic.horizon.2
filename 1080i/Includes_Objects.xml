@@ -332,6 +332,7 @@
         <param name="progress" default="Control.GetLabel(32)" />
         <param name="progress_id" default="32" />
         <param name="spinprogress" default="false" />
+        <param name="spinspinner" default="true" />
         <definition>
             <control type="group">
                 <nested />
@@ -356,7 +357,7 @@
                 <include content="Object_Control" condition="$PARAM[hasspinner]">
                     <param name="control" value="group" />
                     <description>Busy animation</description>
-                    <animation effect="rotate" condition="true" start="0" end="360" loop="true" time="1000" center="auto">Conditional</animation>
+                    <animation effect="rotate" condition="$PARAM[spinspinner]" start="0" end="360" loop="true" time="1000" center="auto">Conditional</animation>
                     <control type="image">
                         <texture colordiffuse="$VAR[ColorHighlight]">dialog/loading-spinner.png</texture>
                         <aspectratio>keep</aspectratio>
@@ -364,7 +365,7 @@
                     <control type="image">
                         <texture colordiffuse="$VAR[ColorGradient]">dialog/loading-spinner.png</texture>
                         <aspectratio>keep</aspectratio>
-                        <animation effect="fade" condition="true" start="0" end="100" pulse="true" time="1000">Conditional</animation>
+                        <animation effect="fade" condition="$PARAM[spinspinner]" start="0" end="100" pulse="true" time="1000">Conditional</animation>
                     </control>
                 </include>
 

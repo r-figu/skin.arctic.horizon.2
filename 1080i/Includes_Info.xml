@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+    <include name="Info_Title_Label">
+        <definition>
+            <control type="label">
+                <aligny>center</aligny>
+                <height>80</height>
+                <label>$VAR[Label_Title_Main]</label>
+                <textcolor>$PARAM[colordiffuse]_100</textcolor>
+                <include content="Object_Font" condition="Skin.HasSetting(UseLightFont)">
+                    <param name="font">font_infotitle_light</param>
+                </include>
+                <font>font_infotitle</font>
+                <animation effect="fade" start="0" end="100" time="400" reversible="false">Visible</animation>
+                <nested />
+            </control>
+        </definition>
+    </include>
+    <include name="Info_Title_Logo">
+        <definition>
+            <include content="Info_Title_Label">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <visible>![$PARAM[visible]]</visible>
+            </include>
+            <control type="image">
+                <height>80</height>
+                <aspectratio align="left">keep</aspectratio>
+                <fadetime>400</fadetime>
+                <texture background="true">$VAR[Image_CropLogo_Main]</texture>
+                <animation effect="fade" start="0" end="100" time="400" reversible="false">Visible</animation>
+                <visible>$PARAM[visible]</visible>
+            </control>
+        </definition>
+    </include>
+
     <include name="Info_Title">
         <param name="colordiffuse" default="main_fg" />
         <param name="container" default="" />
@@ -8,40 +41,23 @@
         <definition>
             <control type="group">
                 <height>80</height>
-                <control type="label">
-                    <aligny>center</aligny>
-                    <height>80</height>
-                    <label>$VAR[Label_Title_Main]</label>
-                    <textcolor>$PARAM[colordiffuse]_100</textcolor>
-                    <include content="Object_Font" condition="Skin.HasSetting(UseLightFont)">
-                        <param name="font">font_infotitle_light</param>
-                    </include>
-                    <font>font_infotitle</font>
+                <!-- Title Only -->
+                <include content="Info_Title_Label" condition="$PARAM[forcetext] | !Skin.HasSetting(TMDbHelper.EnableCrop)">
+                    <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                </include>
 
-                    <visible>[$PARAM[forcetext] | ![Skin.HasSetting(TMDbHelper.EnableCrop) + [!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.CropImage)) | !String.IsEmpty($PARAM[container]ListItem.Art(clearlogo)) | !String.IsEmpty($PARAM[container]ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty($PARAM[container]ListItem.Art(artist.clearlogo)) | !String.IsEmpty(Window.Property(CropLogo))]]]</visible>
+                <!-- Recommendations Dialogs -->
+                <include content="Info_Title_Logo" condition="!$PARAM[forcetext] + Skin.HasSetting(TMDbHelper.EnableCrop) + $EXP[Exp_RecommendationDialogs]">
+                    <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                    <param name="visible">!String.IsEmpty(Window.Property(CropLogo))</param>
+                </include>
 
-                    <animation type="Hidden" reversible="false">
-                        <effect type="fade" end="0" start="100" time="300" delay="700"/>
-                    </animation>
-                    <animation type="Visible" reversible="false">
-                        <effect type="fade" end="100" start="0" time="300" delay="150"/>
-                    </animation>
-                </control>
-                <control type="image">
-                    <height>80</height>
-                    <aspectratio align="left">keep</aspectratio>
-                    <fadetime>600</fadetime>
-                    <texture background="true">$VAR[Image_CropLogo_Main]</texture>
+                <!-- Other -->
+                <include content="Info_Title_Logo" condition="!$PARAM[forcetext] + Skin.HasSetting(TMDbHelper.EnableCrop) + !$EXP[Exp_RecommendationDialogs]">
+                    <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                    <param name="visible">[!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.CropImage)) + String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.FileNameAndPath),$PARAM[container]ListItem.FileNameAndPath)] | !String.IsEmpty($PARAM[container]ListItem.Art(clearlogo)) | !String.IsEmpty($PARAM[container]ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty($PARAM[container]ListItem.Art(artist.clearlogo))</param>
+                </include>
 
-                    <visible>![!$PARAM[forcetext] + Skin.HasSetting(TMDbHelper.EnableCrop) + [!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.CropImage)) | !String.IsEmpty($PARAM[container]ListItem.Art(clearlogo)) | !String.IsEmpty($PARAM[container]ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty($PARAM[container]ListItem.Art(artist.clearlogo)) | !String.IsEmpty(Window.Property(CropLogo))]]</visible>
-
-                    <animation type="Visible" reversible="false">
-                        <effect type="fade" end="100" start="0" time="300" delay="1000"/>
-                    </animation>
-                    <animation type="Hidden" reversible="false">
-                        <effect type="fade" end="0" start="100" time="150" delay="0"/>
-                    </animation>
-                </control>
             </control>
         </definition>
     </include>
@@ -1036,6 +1052,26 @@
                     <visible>!String.IsEqual(Control.GetLabel(99995),common/null.png)</visible>
                 </include>
 
+                <!-- Info Providers -->
+                <include content="Object_Control" condition="!Skin.HasSetting(Codecs.DisableMediaProviderIcons)">
+                    <param name="control">image</param>
+                    <width>56</width>
+                    <height>40</height>
+                    <centertop>50%</centertop>
+                    <aspectratio>keep</aspectratio>
+                    <texture background="True" diffuse="diffuse/provider.png">flags/justwatch2.png</texture>
+                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Provider.1.Icon))</visible>
+                    <visible>String.IsEmpty(ListItem.VideoCodec) + String.IsEmpty(ListItem.AudioCodec)</visible>
+                </include>
+                <include content="Info_Provider"><param name="pos" value="1" /></include>
+                <include content="Info_Provider"><param name="pos" value="2" /></include>
+                <include content="Info_Provider"><param name="pos" value="3" /></include>
+                <include content="Info_Provider"><param name="pos" value="4" /></include>
+                <include content="Info_Provider"><param name="pos" value="5" /></include>
+                <include content="Info_Provider"><param name="pos" value="6" /></include>
+                <include content="Info_Provider"><param name="pos" value="7" /></include>
+                <include content="Info_Provider"><param name="pos" value="8" /></include>
+
                 <!-- Audio Languages -->
                 <include content="Object_Control" condition="!Skin.HasSetting(Codecs.DisableMediaCodecIcons)">
                     <param name="control">group</param>
@@ -1091,25 +1127,23 @@
                     <param name="icon" value="flags/subtitles.png" />
                 </include>
 
-                <!-- Info Providers -->
-                <include content="Object_Control" condition="!Skin.HasSetting(Codecs.DisableMediaProviderIcons)">
-                    <param name="control">image</param>
-                    <width>56</width>
-                    <height>40</height>
-                    <centertop>50%</centertop>
-                    <aspectratio>keep</aspectratio>
-                    <texture background="True" diffuse="diffuse/provider.png">flags/justwatch2.png</texture>
-                    <visible>!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.Provider.1.Icon))</visible>
-                    <visible>String.IsEmpty(ListItem.VideoCodec) + String.IsEmpty(ListItem.AudioCodec)</visible>
+
+                <!-- MPAA -->
+                <include content="Object_Control" condition="!Skin.HasSetting(Codecs.DisableMediaCodecIcons)">
+                    <param name="control">group</param>
+                    <width>0</width>
+                    <visible>[!String.IsEmpty(ListItem.Property(AudioLanguage.1)) + !Skin.HasSetting(Codecs.DisableAudioLanguageFlags)] | [!String.IsEmpty(ListItem.Property(SubtitleLanguage.1)) + !Skin.HasSetting(Codecs.DisableSubtitleLanguageFlags)]</visible>
                 </include>
-                <include content="Info_Provider"><param name="pos" value="1" /></include>
-                <include content="Info_Provider"><param name="pos" value="2" /></include>
-                <include content="Info_Provider"><param name="pos" value="3" /></include>
-                <include content="Info_Provider"><param name="pos" value="4" /></include>
-                <include content="Info_Provider"><param name="pos" value="5" /></include>
-                <include content="Info_Provider"><param name="pos" value="6" /></include>
-                <include content="Info_Provider"><param name="pos" value="7" /></include>
-                <include content="Info_Provider"><param name="pos" value="8" /></include>
+                <!-- MPAA -->
+                <include content="Object_Control" condition="!String.IsEmpty(Skin.String(MPAA_Country))">
+                    <param name="control">image</param>
+                    <width>60</width>
+                    <height>40</height>
+                    <aspectratio align="center">keep</aspectratio>
+                    <texture>$VAR[MPAA_ImageConvert,resource://resource.images.classificationicons.colour/,]</texture>
+                    <centertop>50%</centertop>
+                    <visible>!String.IsEmpty(ListItem.MPAA)</visible>
+                </include>
             </control>
 
             <!-- Folder Items -->
