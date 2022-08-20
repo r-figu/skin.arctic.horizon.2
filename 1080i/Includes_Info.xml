@@ -33,7 +33,7 @@
                     <fadetime>600</fadetime>
                     <texture background="true">$VAR[Image_CropLogo_Main]</texture>
 
-                    <visible>[!$PARAM[forcetext] + Skin.HasSetting(TMDbHelper.EnableCrop) + [!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.CropImage)) | !String.IsEmpty($PARAM[container]ListItem.Art(clearlogo)) | !String.IsEmpty($PARAM[container]ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty($PARAM[container]ListItem.Art(artist.clearlogo)) | !String.IsEmpty(Window.Property(CropLogo))]]</visible>
+                    <visible>![!$PARAM[forcetext] + Skin.HasSetting(TMDbHelper.EnableCrop) + [!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.CropImage)) | !String.IsEmpty($PARAM[container]ListItem.Art(clearlogo)) | !String.IsEmpty($PARAM[container]ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty($PARAM[container]ListItem.Art(artist.clearlogo)) | !String.IsEmpty(Window.Property(CropLogo))]]</visible>
 
                     <animation type="Visible" reversible="false">
                         <effect type="fade" end="100" start="0" time="300" delay="1000"/>
