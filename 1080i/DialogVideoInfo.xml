@@ -18,12 +18,12 @@
                     <!-- Person Info -->
                     <include content="Info_Panel" condition="!$EXP[Exp_IsPersonInfo]">
                         <param name="plotheight" value="info_plot_large_h" />
+                        <param name="forcetext" value="true" />
                     </include>
 
                     <!-- Video Info -->
                     <include content="Info_Panel" condition="$EXP[Exp_IsPersonInfo]">
                         <param name="plotheight" value="info_plot_person_h" />
-                        <param name="forcetext" value="true" />
                     </include>
 
                     <!-- Button Group -->
