@@ -1,7 +1,7 @@
 The skin has been (minimally) tweaked to cover my needs. Main differences:
 
 - ~Hide top menu search icon/bar~ _Option available on upstream, yay!_
-- Incorporate [languageflags](https://github.com/r-figu/skin.arctic.horizon.2/tree/main/media/languageflags) into the skin and clean/add missing flags (ISO 639-2/T 3 letter code)
+- ~Incorporate [languageflags](https://github.com/r-figu/skin.arctic.horizon.2/tree/main/media/languageflags) into the skin and clean/add missing flags (ISO 639-2/T 3 letter code)~ _Idem_
 - Change fullscreen widget controls position 
 - Hide fullscreen/row plotbox
 - Hide ratings and aired info
