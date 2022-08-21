@@ -1256,8 +1256,7 @@
             <height>40</height>
             <control type="image">
                 <aspectratio>keep</aspectratio>
-                <texture>$INFO[$PARAM[property],languageflags/,.png]</texture>
-                <!--<texture>$INFO[$PARAM[property],flags/color/language/,.png]</texture>-->
+                <texture>$INFO[$PARAM[property],flags/color/language/,.png]</texture>
             </control>
             <control type="image">
                 <centerbottom>10%</centerbottom>

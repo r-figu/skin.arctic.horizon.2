@@ -407,7 +407,7 @@
                 <width>grid_x08</width>
                 <bordersize>18</bordersize>
                 <aspectratio align="right">keep</aspectratio>
-                <texture>$INFO[Window(Home).Property($PARAM[language].Language),languageflags/,.png]</texture>
+                <texture>$INFO[Window(Home).Property($PARAM[language].Language),flags/color/language/,.png]</texture>
             </control>
 
         </control>
