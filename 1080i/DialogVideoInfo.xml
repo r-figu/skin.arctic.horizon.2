@@ -15,13 +15,13 @@
                     <visible>!Control.HasFocus(7001) | !Player.HasVideo</visible>
                     <include>Animation_DialogInfo_Recommendations</include>
 
-                    <!-- Person Info -->
+                    <!-- Video Info -->
                     <include content="Info_Panel" condition="!$EXP[Exp_IsPersonInfo]">
                         <param name="plotheight" value="info_plot_large_h" />
                         <param name="forcetext" value="true" />
                     </include>
 
-                    <!-- Video Info -->
+                    <!-- Person Info -->
                     <include content="Info_Panel" condition="$EXP[Exp_IsPersonInfo]">
                         <param name="plotheight" value="info_plot_person_h" />
                     </include>
