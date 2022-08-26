@@ -12,7 +12,8 @@ The skin has been (minimally) tweaked to cover my needs. Main differences:
 Config:
 
 - Home elements: Fullscreen widget or multi-widgets with no info whatsoever
-- Views: Row + vertical wall mode
+- Views: Row poster + vertical wall mode
+- Style: Fanart
 
 Many thanks to jurialmunkey for his brilliant and awesome work! I've been running the Arctic skins for years.
 
